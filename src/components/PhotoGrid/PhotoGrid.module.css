@@ -1,0 +1,51 @@
+/* PhotoGrid.module.css */
+
+/* Grid container */
+.photoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* always 3 columns */
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Each grid item */
+.gridItem {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* keeps square shape */
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.gridItem:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Image inside gridItem uses Next.js Image fill */
+.gridItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Optional: add smooth appearance on load */
+.gridItem {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Keep 3x3 layout on all screen sizes, no responsive changes */

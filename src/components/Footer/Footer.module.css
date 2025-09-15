@@ -1,0 +1,128 @@
+.footer {
+  background-color: rgba(
+    17,
+    17,
+    17,
+    0.95
+  ); /* slight transparency for glass effect */
+  color: white;
+  padding: 3rem 2rem 1rem;
+  font-family: "Poppins", sans-serif;
+  backdrop-filter: blur(10px); /* glass effect */
+}
+
+.footerHeading {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-family: "Pinyon Script", cursive;
+  letter-spacing: 1px;
+}
+
+.quickLinksTag {
+  font-family: "Pinyon Script", cursive;
+}
+.footerTop {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tagline h2 {
+  font-size: 1.5rem;
+  margin: 0;
+  line-height: 1.4;
+  font-weight: 500;
+  text-align: center;
+}
+
+.quickLinks,
+.socialLinks {
+  flex: 1;
+  min-width: 200px;
+}
+
+.quickLinks h3,
+.socialLinks h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.quickLinks ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 0.5rem 1.5rem;
+}
+
+.quickLinks ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  font-family: "Playfair Display", serif;
+}
+
+.quickLinks ul li a:hover {
+  color: #2563eb;
+  transform: translateX(5px);
+}
+
+.socialLinks .icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialLinks .icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.socialLinks .icons a:hover {
+  background-color: #2563eb;
+  color: white;
+  transform: scale(1.1);
+}
+
+.footerBottom {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.footerBottomText {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.6rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footerTop {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .quickLinks ul {
+    grid-template-columns: 1fr; /* stack links in single column on small screens */
+    gap: 0.5rem 0;
+  }
+
+  .socialLinks .icons {
+    justify-content: center;
+  }
+}

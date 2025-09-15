@@ -1,0 +1,120 @@
+.galleryPage {
+  width: 100%;
+  font-family: "Playfair Display", serif;
+  color: white;
+}
+
+/* ===== Marquee Section ===== */
+.marqueeSection {
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  background-color: wheat;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  overflow: hidden;
+}
+
+.marqueeRow {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+}
+
+.carouselSection {
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+.carouselItem {
+  flex-shrink: 0;
+}
+
+.carouselImg {
+  width: 300px; /* increased */
+  height: 300px; /* increased */
+  object-fit: cover;
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.carouselImg:hover {
+  transform: scale(1.05);
+  filter: brightness(1.05);
+}
+
+.carouselSection .marqueeRow:first-child {
+  margin-bottom: 2rem; /* adjust this value as needed */
+}
+
+/* Make carousel responsive */
+@media (max-width: 1024px) {
+  .carouselImg {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carouselImg {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carouselImg {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* ===== Category Gallery ===== */
+.categoryGallery {
+  padding: 3rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.categorySection {
+  margin-bottom: 3rem;
+}
+
+.categorySection h2 {
+  font-family: "Pinyon Script", cursive;
+  font-size: 2.2rem; /* slightly larger */
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* increased */
+  gap: 1.5rem; /* increased gap for bigger images */
+}
+
+.gridItem img {
+  width: 100%;
+  height: 250px; /* increased */
+  object-fit: cover;
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.gridItem img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.05);
+}
+
+/* ===== Optional subtle section separators ===== */
+.categorySection:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 2rem;
+}
+
+/* ===== Smooth scroll for marquee rows ===== */
+.marqueeRow img {
+  display: block;
+}

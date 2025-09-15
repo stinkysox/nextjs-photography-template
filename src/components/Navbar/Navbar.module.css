@@ -1,0 +1,133 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+
+  background: rgba(255, 255, 255, 0.1); /* lighter translucent background */
+  backdrop-filter: blur(15px); /* more blur */
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  color: black;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background 0.3s ease;
+  font-family: "Playfair Display", serif;
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70%;
+  height: 100vh;
+  background: #111;
+  color: white;
+  transition: right 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  z-index: 999;
+}
+
+.mobileMenu.menuOpen {
+  right: 0;
+}
+
+/* Close button inside mobile menu */
+.closeIcon {
+  align-self: flex-end;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.navLinks li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navLinks li a:hover {
+  color: #2563eb;
+}
+
+/* Hamburger button container */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  color: white;
+}
+
+/* Mobile Menu */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70%;
+  height: 100vh;
+  background: #111;
+  color: white;
+  transition: right 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  z-index: 999;
+}
+
+.mobileMenu.menuOpen {
+  right: 0;
+}
+
+.mobileMenu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.mobileMenu ul li a {
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navLinks {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+}
