@@ -85,10 +85,10 @@ export default function AboutPage() {
       >
         <h2>We Are A Perfect Match If You...</h2>
         <ul>
-          <li>&check; Love timeless, cinematic photography</li>
-          <li>&check; Value emotional storytelling</li>
-          <li>&check; Want an elegant experience</li>
-          <li>&check; Appreciate fine art aesthetics</li>
+          <li>&#10003; Love timeless, cinematic photography</li>
+          <li>&#10003; Value emotional storytelling</li>
+          <li>&#10003; Want an elegant experience</li>
+          <li>&#10003; Appreciate fine art aesthetics</li>
         </ul>
       </motion.section>
 
