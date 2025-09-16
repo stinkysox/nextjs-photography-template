@@ -1,3 +1,45 @@
+/* ===== Gallery Hero Section ===== */
+.galleryHero {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("https://i.pinimg.com/736x/d9/e2/8e/d9e28e4f73f7a099dd468b82312fc630.jpg")
+      center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Large screens: prevent stretching */
+@media (min-width: 1024px) {
+  .galleryHero {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url("https://i.pinimg.com/736x/d9/e2/8e/d9e28e4f73f7a099dd468b82312fc630.jpg")
+        center/contain no-repeat;
+    background-color: #000; /* fills empty space if image doesn’t cover */
+  }
+}
+
+.galleryHero .heroContent {
+  z-index: 2;
+}
+
+.galleryHero .heroContent h1 {
+  font-family: "Pinyon Script", cursive;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.galleryHero .heroContent p {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
 .galleryPage {
   width: 100%;
   font-family: "Playfair Display", serif;

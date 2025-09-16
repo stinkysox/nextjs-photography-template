@@ -1,10 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap");
 
 .formSection {
   padding: 4rem 2rem;
   text-align: center;
   background: #faf9f6;
   font-family: "Playfair Display", serif;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Image Row */
@@ -13,20 +16,23 @@
   justify-content: center;
   gap: 1rem;
   margin-bottom: 2rem;
+  flex-wrap: wrap; /* wrap on small screens */
 }
 
 .squareImage img {
   border-radius: 10px;
   object-fit: cover;
+  width: 150px;
+  height: 150px;
 }
 
 /* Form Wrapper */
 .formWrapper {
-  max-width: 500px;
   margin: 0 auto;
-
   padding: 2rem;
   border-radius: 15px;
+  max-width: 600px;
+  box-sizing: border-box;
 }
 
 .formTitle {
@@ -49,17 +55,23 @@
   font-size: 1rem;
   font-family: "Playfair Display", serif;
   color: #2c2c2c;
+  box-sizing: border-box;
 }
 
 /* Floating Options */
+/* Options Row */
 .optionsRow {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(120px, 1fr)
+  ); /* responsive columns */
   gap: 0.8rem;
   margin-bottom: 1.5rem;
-  justify-content: center;
+  justify-items: center; /* center buttons in each grid cell */
 }
 
+/* Option Button */
 .optionButton {
   padding: 0.7rem 1.5rem;
   border: 1px solid #ccc;
@@ -70,33 +82,35 @@
   font-size: 1rem;
   font-family: "Playfair Display", serif;
   color: #2c2c2c;
+  text-align: center;
+  width: 100%; /* take full width of grid cell */
+  box-sizing: border-box;
 }
 
 /* Light pastel backgrounds on active */
 .optionButton.active {
-  background: #e7d8ff; /* soft lavender */
+  color: #2c2c2c;
+  font-weight: 600;
+}
+
+.optionButton.active:nth-child(1) {
+  background: #e7d8ff;
   border-color: #c9b6ff;
 }
 
-.optionButton:nth-child(2).active {
-  background: #ffdce5; /* soft blush pink */
+.optionButton.active:nth-child(2) {
+  background: #ffdce5;
   border-color: #f9b5c1;
 }
 
-.optionButton:nth-child(3).active {
-  background: #d6f7ff; /* light sky blue */
+.optionButton.active:nth-child(3) {
+  background: #d6f7ff;
   border-color: #9fdff5;
 }
 
-.optionButton:nth-child(4).active {
-  background: #e4ffe1; /* mint green */
+.optionButton.active:nth-child(4) {
+  background: #e4ffe1;
   border-color: #b7f7b1;
-}
-
-/* Keep text same */
-.optionButton.active {
-  color: #2c2c2c;
-  font-weight: 600;
 }
 
 /* Submit Button */
@@ -104,7 +118,7 @@
   padding: 0.9rem 2rem;
   border: none;
   border-radius: 10px;
-  background: gold;
+  background: gray;
   color: white;
   font-size: 1.1rem;
   font-family: "Playfair Display", serif;
@@ -113,5 +127,58 @@
 }
 
 .submitBtn:hover {
-  background: #ccc;
+  background: #555;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .formSection {
+    padding: 3rem 1rem;
+  }
+
+  .formTitle {
+    font-size: 1.6rem;
+  }
+
+  .imageRow {
+    gap: 0.5rem;
+  }
+
+  .squareImage img {
+    width: 140px;
+    height: 150px;
+  }
+
+  .optionButton {
+    flex: 1 1 100%;
+    font-size: 0.95rem;
+  }
+
+  .submitBtn {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .formWrapper {
+    padding: 1.5rem;
+  }
+
+  .formTitle {
+    font-size: 1.4rem;
+  }
+
+  .squareImage img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .optionButton {
+    font-size: 0.9rem;
+  }
+
+  .submitBtn {
+    font-size: 0.95rem;
+  }
 }

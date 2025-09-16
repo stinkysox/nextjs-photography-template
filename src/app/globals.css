@@ -12,6 +12,38 @@
   }
 }
 
+/* ===== Scrollbar Styling ===== */
+::-webkit-scrollbar {
+  width: 10px; /* width of the scrollbar */
+  height: 10px; /* horizontal scrollbar height */
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0; /* track color */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c0c0c0; /* thumb color */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #999999; /* thumb hover color */
+}
+
+/* ===== Remove tap highlight on mobile ===== */
+* {
+  -webkit-tap-highlight-color: transparent; /* removes the blue overlay on tap */
+  -webkit-user-select: none; /* optional: prevent text selection on tap */
+}
+
+/* ===== Optional: make scrollbar slightly visible on Firefox ===== */
+* {
+  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-color: #c0c0c0 #f0f0f0; /* thumb track */
+}
+
 html,
 body {
   max-width: 100vw;

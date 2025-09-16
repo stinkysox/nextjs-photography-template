@@ -2,31 +2,49 @@
 
 import Masonry from "react-masonry-css";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import styles from "./about.module.css";
 import Services from "@/components/Services/Services";
 import FormSection from "@/components/FormSection/FormSection";
 
-const breakpointColumns = {
-  default: 3,
-  1100: 2,
-  700: 1,
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i = 1) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, ease: "easeOut", delay: i * 0.2 },
+  }),
 };
 
 export default function AboutPage() {
   return (
     <main className={styles.aboutPage}>
       {/* ===== Hero Section ===== */}
-      <section className={styles.heroSection}>
-        <Image
-          src="https://i.pinimg.com/736x/63/23/28/632328d4643f0b06d585e0c62ab1d11e.jpg"
-          alt="About Hero"
-          fill
-          priority
-          className={styles.heroImg}
-        />
-      </section>
+      <motion.section
+        className={styles.heroSection}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        custom={0}
+        variants={fadeUp}
+      >
+        <div className={styles.heroOverlay}>
+          <h1 className={styles.heroTitle}>About Us</h1>
+          <h2 className={styles.heroSubtitle}>
+            Capturing Your Moments, Preserving Your Memories
+          </h2>
+        </div>
+      </motion.section>
 
-      <section className={styles.altSection}>
+      {/* ===== Alt Section ===== */}
+      <motion.section
+        className={styles.altSection}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        custom={1}
+        variants={fadeUp}
+      >
         <h2>Hello</h2>
         <p>
           “We believe every moment tells a story worth remembering. From
@@ -42,12 +60,28 @@ export default function AboutPage() {
           height={500}
           className={styles.centerImg}
         />
-      </section>
-      <>
-        <Services />
-      </>
+      </motion.section>
 
-      <section className={styles.finalSection}>
+      {/* ===== Services Section ===== */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        custom={2}
+        variants={fadeUp}
+      >
+        <Services />
+      </motion.div>
+
+      {/* ===== Final Section ===== */}
+      <motion.section
+        className={styles.finalSection}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        custom={3}
+        variants={fadeUp}
+      >
         <h2>We Are A Perfect Match If You...</h2>
         <ul>
           <li>✓ Love timeless, cinematic photography</li>
@@ -55,8 +89,18 @@ export default function AboutPage() {
           <li>✓ Want an elegant experience</li>
           <li>✓ Appreciate fine art aesthetics</li>
         </ul>
-      </section>
-      <FormSection />
+      </motion.section>
+
+      {/* ===== Form Section ===== */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        custom={4}
+        variants={fadeUp}
+      >
+        <FormSection />
+      </motion.div>
     </main>
   );
 }

@@ -3,6 +3,7 @@ import styles from "./Footer.module.css";
 import Image from "next/image";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -19,19 +20,22 @@ export default function Footer() {
           <h3 className={styles.quickLinksTag}>Quick Links</h3>
           <ul>
             <li>
-              <a href="#home">Home</a>
+              <Link href="/">Home</Link>
             </li>
             <li>
-              <a href="#gallery">Gallery</a>
+              <Link href="/about">About</Link>
             </li>
             <li>
-              <a href="#teasers">Teasers</a>
+              <Link href="/gallery">Gallery</Link>
             </li>
             <li>
-              <a href="#testimonials">Testimonials</a>
+              <Link href="/teasers">Teasers</Link>
             </li>
             <li>
-              <a href="#contact">Contact</a>
+              <Link href="/testimonials">Testimonials</Link>
+            </li>
+            <li>
+              <Link href="/contact">Contact</Link>
             </li>
           </ul>
         </div>
@@ -62,7 +66,7 @@ export default function Footer() {
 
       <div className={styles.footerBottom}>
         <p className={styles.footerBottomText}>
-          © {new Date().getFullYear()} My Photography. All rights reserved.
+          © {new Date().getFullYear()} Elegant Photography. All rights reserved.
         </p>
       </div>
     </footer>

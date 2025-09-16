@@ -7,9 +7,7 @@
   background: rgba(255, 255, 255, 0.1); /* lighter translucent background */
   backdrop-filter: blur(15px); /* more blur */
   -webkit-backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-
-  color: black;
+  background-color: #17313e;
   position: sticky;
   top: 0;
   width: 100%;
@@ -25,7 +23,6 @@
   width: 70%;
   height: 100vh;
   background: #111;
-  color: white;
   transition: right 0.3s ease;
   display: flex;
   flex-direction: column;

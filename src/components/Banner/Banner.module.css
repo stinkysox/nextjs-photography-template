@@ -1,17 +1,26 @@
 .banner {
+  position: relative;
   display: flex;
   height: 60vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 3rem 1rem;
-  background-color: #819067;
-  background-image: url("https://i.pinimg.com/736x/d9/e2/8e/d9e28e4f73f7a099dd468b82312fc630.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("https://i.pinimg.com/736x/4f/4b/e5/4f4be5494db24765fbff9a89e96398d4.jpg")
+      center/cover no-repeat;
+  background-color: #819067; /* fallback fill */
   text-align: center;
   color: white;
+}
+
+/* (Optional) If you find a larger image later, swap it in for desktops */
+@media (min-width: 1024px) {
+  .banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url("https://i.pinimg.com/736x/4f/4b/e5/4f4be5494db24765fbff9a89e96398d4.jpg")
+        center/contain no-repeat;
+  }
 }
 
 .imageContainer {

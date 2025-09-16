@@ -1,6 +1,4 @@
-/* PhotoGrid.module.css */
-
-/* Grid container */
+/* ===== Photo Grid ===== */
 .photoGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* always 3 columns */
@@ -8,9 +6,9 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1rem;
+  background-color: #faf9f6;
 }
 
-/* Each grid item */
 .gridItem {
   position: relative;
   width: 100%;
@@ -18,15 +16,17 @@
   border-radius: 0.5rem;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s forwards;
 }
 
-/* Hover effect */
 .gridItem:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Image inside gridItem uses Next.js Image fill */
+/* Next.js Image inside gridItem */
 .gridItem img {
   width: 100%;
   height: 100%;
@@ -34,13 +34,7 @@
   display: block;
 }
 
-/* Optional: add smooth appearance on load */
-.gridItem {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.5s forwards;
-}
-
+/* Fade-in animation */
 @keyframes fadeInUp {
   to {
     opacity: 1;
@@ -48,4 +42,98 @@
   }
 }
 
-/* Keep 3x3 layout on all screen sizes, no responsive changes */
+/* ===== Lightbox Overlay ===== */
+.lightboxOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  padding: 1rem;
+  overflow: auto;
+  animation: fadeInOverlay 0.3s ease forwards;
+}
+
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Lightbox content */
+.lightboxContent {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+}
+
+/* Lightbox image */
+.lightboxContent img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* keeps aspect ratio */
+  border-radius: 12px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.lightboxContent img:hover {
+  transform: scale(1.02);
+}
+
+/* Close button */
+.lightboxClose {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1000;
+  user-select: none;
+  transition: color 0.2s ease;
+}
+
+.lightboxClose:hover {
+  color: #ffcc70;
+}
+
+/* Optional: Arrow buttons for next/prev (can be added later) */
+.lightboxArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1000;
+  user-select: none;
+  padding: 0 1rem;
+  transition: color 0.2s ease;
+}
+
+.lightboxArrow:hover {
+  color: #ffcc70;
+}
+
+.lightboxArrow.left {
+  left: 10px;
+}
+
+.lightboxArrow.right {
+  right: 10px;
+}

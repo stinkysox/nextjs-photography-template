@@ -3,6 +3,7 @@ import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import styles from "./Navbar.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,69 +14,89 @@ export default function Navbar() {
         <Image
           src="https://i.pinimg.com/736x/54/41/f5/5441f5eeb70c38b5f7226ebcb585d785.jpg"
           alt="Photography Logo"
-          width={50} // specify width
-          height={50} // specify height
+          width={50}
+          height={50}
         />
       </div>
 
       {/* Desktop Menu */}
       <ul className={styles.navLinks}>
         <li>
-          <a href="#home">Home</a>
+          <Link href="/" legacyBehavior>
+            <a>Home</a>
+          </Link>
         </li>
         <li>
-          <a href="#gallery">Gallery</a>
+          <Link href="/about" legacyBehavior>
+            <a>About</a>
+          </Link>
         </li>
         <li>
-          <a href="#teasers">Teasers</a>
+          <Link href="/gallery" legacyBehavior>
+            <a>Gallery</a>
+          </Link>
         </li>
         <li>
-          <a href="#testimonials">Testimonials</a>
+          <Link href="/teasers" legacyBehavior>
+            <a>Teasers</a>
+          </Link>
         </li>
         <li>
-          <a href="#contact">Contact Us</a>
+          <Link href="/testimonials" legacyBehavior>
+            <a>Testimonials</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/contact" legacyBehavior>
+            <a>Contact Us</a>
+          </Link>
         </li>
       </ul>
 
-      {/* Hamburger Button for opening */}
+      {/* Hamburger Button */}
       <div className={styles.hamburger} onClick={() => setMenuOpen(true)}>
-        <HiMenu size={28} color="black" />
+        <HiMenu size={28} color="white" />
       </div>
 
       {/* Mobile Menu */}
       <div
         className={`${styles.mobileMenu} ${menuOpen ? styles.menuOpen : ""}`}
       >
-        {/* Close Button inside the mobile menu */}
+        {/* Close Button */}
         <div className={styles.closeIcon} onClick={() => setMenuOpen(false)}>
           <HiX size={28} />
         </div>
 
         <ul>
           <li>
-            <a href="#home" onClick={() => setMenuOpen(false)}>
+            <Link href="/" onClick={() => setMenuOpen(false)}>
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#gallery" onClick={() => setMenuOpen(false)}>
+            <Link href="/about" onClick={() => setMenuOpen(false)}>
+              About
+            </Link>
+          </li>
+          <li>
+            <Link href="/gallery" onClick={() => setMenuOpen(false)}>
               Gallery
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#teasers" onClick={() => setMenuOpen(false)}>
+            <Link href="/teasers" onClick={() => setMenuOpen(false)}>
               Teasers
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#testimonials" onClick={() => setMenuOpen(false)}>
+            <Link href="/testimonials" onClick={() => setMenuOpen(false)}>
               Testimonials
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#contact" onClick={() => setMenuOpen(false)}>
+            <Link href="/contact" onClick={() => setMenuOpen(false)}>
               Contact Us
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
