@@ -24,6 +24,18 @@ const testimonialsData = [
       "Very cooperative and friendly. The quality of editing and storytelling is beyond expectations.",
     rating: 5,
   },
+  {
+    name: "Sneha Kapoor",
+    review:
+      "We're absolutely thrilled with the photos! Every moment was captured perfectly, and the experience was seamless.",
+    rating: 5,
+  },
+  {
+    name: "Rohan Desai",
+    review:
+      "Can't recommend them enough! Their attention to detail and creativity made our event unforgettable.",
+    rating: 4,
+  },
 ];
 
 export default function Testimonials() {
@@ -53,8 +65,9 @@ export default function Testimonials() {
       >
         <h2>What Our Clients Say</h2>
         <p>
-          Our clients’ stories inspire us to deliver heartfelt films and photos.
-          Here’s what they have to say about their experience with us.
+          Our clients&rsquo; stories inspire us to deliver heartfelt films and
+          photos. Here&rsquo;s what they have to say about their experience with
+          us.
         </p>
       </motion.div>
 
@@ -83,8 +96,8 @@ export default function Testimonials() {
 
         {/* Navigation */}
         <div className={styles.controls}>
-          <button onClick={prev}>&lt;</button>
-          <button onClick={next}>&gt;</button>
+          <button onClick={prev}>&#60;</button>
+          <button onClick={next}>&#62;</button>
         </div>
       </div>
 

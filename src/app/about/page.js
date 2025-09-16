@@ -47,12 +47,13 @@ export default function AboutPage() {
       >
         <h2>Hello</h2>
         <p>
-          “We believe every moment tells a story worth remembering. From
+          &ldquo;We believe every moment tells a story worth remembering. From
           weddings and pre-weddings to portraits and corporate shoots, our
           photography captures emotions, details, and memories that last a
           lifetime. With creativity, passion, and precision, we turn fleeting
-          moments into timeless art.”
+          moments into timeless art.&rdquo;
         </p>
+
         <Image
           src="https://i.pinimg.com/736x/14/34/1f/14341f13c2ccb228bcef3bb02ab62b8f.jpg"
           alt="Profile"
@@ -84,10 +85,10 @@ export default function AboutPage() {
       >
         <h2>We Are A Perfect Match If You...</h2>
         <ul>
-          <li>✓ Love timeless, cinematic photography</li>
-          <li>✓ Value emotional storytelling</li>
-          <li>✓ Want an elegant experience</li>
-          <li>✓ Appreciate fine art aesthetics</li>
+          <li>&check; Love timeless, cinematic photography</li>
+          <li>&check; Value emotional storytelling</li>
+          <li>&check; Want an elegant experience</li>
+          <li>&check; Appreciate fine art aesthetics</li>
         </ul>
       </motion.section>
 

@@ -28,8 +28,8 @@ export default function ContactPage() {
         <div className={styles.heroOverlay}>
           <h1>Contact Us</h1>
           <p>
-            We'd love to hear from you! Let’s create something beautiful
-            together.
+            We&apos;d love to hear from you! Let&apos;s create something
+            beautiful together.
           </p>
         </div>
       </motion.section>
